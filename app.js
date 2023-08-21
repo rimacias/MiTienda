@@ -1,11 +1,18 @@
 var createError = require('http-errors');
 var express = require('express');
+
+const sqlite3 = require('sqlite3').verbose();
+
+const db = new sqlite3.Database('database_development.sqlite');
+
+
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var productosRouter = require('./routes/productos');
 
 var app = express();
 
@@ -21,6 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use ('/productos', productosRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
