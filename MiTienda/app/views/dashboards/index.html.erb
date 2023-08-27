@@ -22,7 +22,19 @@
             </tr>
             </thead>
             <tbody>
-            
+            <% if @error_message %>
+                <p><%= @error_message %></p>
+            <% else %>
+            <% @products.each do |product| %>
+                <tr>
+                    <th><%= product['nombre'] %></th>
+                    <th><%= product['descripcion'] %></th>
+                    <th><%= product['precio'] %> </th>
+                    <th>Stock</th>
+                    <th>Acciones</th>
+                </tr>
+                <% end %>
+            <% end %>
             </tbody>
         </table>
         </div>
