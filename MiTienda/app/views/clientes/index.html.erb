@@ -1,12 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-        <h1 class="text-center">Inventario</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-        <h2 class="text-center">Productos</h2>
+        <h1 class="text-center">Clientes</h1>
         </div>
     </div>
     <div class="row">
@@ -14,24 +9,24 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>Nombre</th>
-                <th>Descripción</th>
-                <th>Precio</th>
-                <th>Stock</th>
-                <th>Acciones</th>
+                <th>Cedula</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Correo</th>
+                <th>Fecha de Creado</th>
             </tr>
             </thead>
             <tbody>
             <% if @error_message %>
                 <p><%= @error_message %></p>
             <% else %>
-            <% @products.each do |product| %>
+            <% @clientes.each do |cliente| %>
                 <tr>
-                    <th><%= product['nombre'] %></th>
-                    <th><%= product['descripcion'] %></th>
-                    <th><%= product['precio'] %> </th>
-                    <th>Stock</th>
-                    <th>Acciones</th>
+                    <th><%= cliente['cedula'] %></th>
+                    <th><%= cliente['nombre'] %></th>
+                    <th><%= cliente['apellido'] %></th>
+                    <th><%= cliente['email'] %> </th>
+                    <th><%= cliente['createdAt'] %> </th>
                 </tr>
                 <% end %>
             <% end %>

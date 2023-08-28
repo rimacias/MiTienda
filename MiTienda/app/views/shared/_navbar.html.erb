@@ -6,17 +6,20 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <span class="logo">Mi Tienda</span>
     <ul class="navbar-nav">
+      <li class="nav-item">
+        <%= link_to 'Ver Inventario', '/', class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Ver Clientes', '/clientes', class: 'nav-link' %>
+      </li>
       <li class="nav-item active">
-        <%= link_to 'Agregar Venta', '#', class: 'nav-link' %>
+        <%= link_to 'Agregar Venta', '/ventas/new', class: 'nav-link' %>
       </li>
       <li class="nav-item">
-        <%= link_to 'Ver Inventario', '#', class: 'nav-link' %>
+        <%= link_to 'Agregar Inventario', '/productos/update', class: 'nav-link' %>
       </li>
       <li class="nav-item">
-        <%= link_to 'Agregar Inventario', '#', class: 'nav-link' %>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'Administrar Productos', '#', class: 'nav-link' %>
+        <%= link_to 'Administrar Productos', '/productos', class: 'nav-link' %>
       </li>
     </ul>
   </div>
